@@ -179,152 +179,152 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bodymat
-    second: {fileID: 2100000, guid: 37fb13558829a416d9d3174c006d624f, type: 2}
+    second: {fileID: 2100000, guid: 8afd8e00f8eb64f8c9429c8bdc6204a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bottommat
-    second: {fileID: 2100000, guid: cdf303efff6814462aa64e4ef1ff17f1, type: 2}
+    second: {fileID: 2100000, guid: 6d6b3896a1fca430b905c240e39746ba, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hairmat
-    second: {fileID: 2100000, guid: 9f1f1e0202de540af9b6f344a6ed560d, type: 2}
+    second: {fileID: 2100000, guid: efe12922ccace4e8ab8a4f32c6d29ba6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Shoesmat
-    second: {fileID: 2100000, guid: 6043ed279c128468994ae144421ab382, type: 2}
+    second: {fileID: 2100000, guid: 514ce06ddaec846ffae58eb15ed9d932, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Topmat
-    second: {fileID: 2100000, guid: 1049990e1b75545e8a487401af3ccfd3, type: 2}
+    second: {fileID: 2100000, guid: 415f13e863bf94be6bc9444d600cadfd, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Body_Diffuse
-    second: {fileID: 2800000, guid: 2cf3e09b8d8c6461dabba6af45d556de, type: 3}
+    second: {fileID: 2800000, guid: 31748fa2f62bf4651b455266298810ea, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Body_Gloss
-    second: {fileID: 2800000, guid: 24a1365b2d6c942938ff9c310e0d77ac, type: 3}
+    second: {fileID: 2800000, guid: 18818bd8e64cb42049560d44fd0426e4, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Body_Normal
-    second: {fileID: 2800000, guid: 58a5b46defffc4434a801988747b95f1, type: 3}
+    second: {fileID: 2800000, guid: 55ac25a56d00146ecbe0326d7df70303, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Body_Opacity
-    second: {fileID: 2800000, guid: f78a6a2c3dd484c5489d977a1f8faf76, type: 3}
+    second: {fileID: 2800000, guid: 208460f4a5eb34cb4b03fd89a1981619, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Body_Specular
-    second: {fileID: 2800000, guid: ea5bf6252cc144927bf4ca8be866603e, type: 3}
+    second: {fileID: 2800000, guid: c645cfa3323eb4ba7951a6b5d7e469c4, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Bottom_Diffuse
-    second: {fileID: 2800000, guid: 31e0f5f90ec154148a73091198fb89ee, type: 3}
+    second: {fileID: 2800000, guid: bf3dc8a14d3884df7b9b3ab4ec21e67f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Bottom_Gloss
-    second: {fileID: 2800000, guid: e8cb797db03764f949603bc5922a6a41, type: 3}
+    second: {fileID: 2800000, guid: 76b77c51b51084de6b52cf7c6db08e69, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Bottom_Normal
-    second: {fileID: 2800000, guid: e107a0f50bbe6435f9ebfd41fb829a57, type: 3}
+    second: {fileID: 2800000, guid: 39f6f775cda294cf899ad9d09ff68f91, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Bottom_Opacity
-    second: {fileID: 2800000, guid: cafae328379964e23a786b1748f1f6ad, type: 3}
+    second: {fileID: 2800000, guid: 06fe56f0ab11d4fdf9f81719f9f5593f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Bottom_Specular
-    second: {fileID: 2800000, guid: ed64dbed44e064c9b981ff4e27927f69, type: 3}
+    second: {fileID: 2800000, guid: ed97960b001a847669194fdeebe8fa9a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Hair_Diffuse
-    second: {fileID: 2800000, guid: e5b4d48e81fc2409091716568f0f42fe, type: 3}
+    second: {fileID: 2800000, guid: 4bae9e2f6ef28478b8638d52e9a1cfca, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Hair_Gloss
-    second: {fileID: 2800000, guid: ca7e884d02aa24a17a9ad94280c31bb7, type: 3}
+    second: {fileID: 2800000, guid: 2690dac44f1fb4d1ea6959f4e3455002, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Hair_Normal
-    second: {fileID: 2800000, guid: 58705b2aa23f14cbc9e38cf210dbb5cb, type: 3}
+    second: {fileID: 2800000, guid: e036040a22bf14d8ab16e6507f8832c6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Hair_Opacity
-    second: {fileID: 2800000, guid: 021bbf95c624b484e9d3c81279567dd3, type: 3}
+    second: {fileID: 2800000, guid: a0ed9b6a576a64cf5942a19ca0a70aa6, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Hair_Specular
-    second: {fileID: 2800000, guid: 96962d3186c5c45ae8f17b4ba3e43632, type: 3}
+    second: {fileID: 2800000, guid: 52632888a495546abbf7c83afd44c4a7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Shoes_Diffuse
-    second: {fileID: 2800000, guid: 1e863089d0cb440268c5e011f961bed4, type: 3}
+    second: {fileID: 2800000, guid: e4bce8e56909d4728860411000d794a3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Shoes_Gloss
-    second: {fileID: 2800000, guid: cb9aa466a5bb348079b35fce48cef84d, type: 3}
+    second: {fileID: 2800000, guid: ccc915e71322444a7a74defa9a170ccd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Shoes_Normal
-    second: {fileID: 2800000, guid: ca4f4f1749c2546bcbb748f69010bdd5, type: 3}
+    second: {fileID: 2800000, guid: 13498f47bbfe84fa1aca4fecffb9d813, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Shoes_Opacity
-    second: {fileID: 2800000, guid: 297b7a9ddf80248b8af30e48c6718ae7, type: 3}
+    second: {fileID: 2800000, guid: d302a7674050340f0af28b6a4f6149f1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Shoes_Specular
-    second: {fileID: 2800000, guid: 83db42e872d03458eb5fc8c321eb220d, type: 3}
+    second: {fileID: 2800000, guid: 82c91156176e84c0c8080fdf00263bf5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Top_Diffuse
-    second: {fileID: 2800000, guid: 61bc34c81bb184b22bdfdf57662dffcc, type: 3}
+    second: {fileID: 2800000, guid: cf355dae487e745e58c6c1adc6462ac0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Top_Gloss
-    second: {fileID: 2800000, guid: b9cd745eabcd54ece984ad19cf3d9075, type: 3}
+    second: {fileID: 2800000, guid: ba7796be3297747f8bde56035c9ebb69, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Top_Normal
-    second: {fileID: 2800000, guid: b1fa33f2efc5e4e8caa75903255e93b8, type: 3}
+    second: {fileID: 2800000, guid: 36581ec697fb6470ca35e651abbf5f0c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Top_Opacity
-    second: {fileID: 2800000, guid: b5440d92585dc450db40a4069e16ec35, type: 3}
+    second: {fileID: 2800000, guid: 2e44fd99481fb4a9da5bfe340e9c984d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Remy_Top_Specular
-    second: {fileID: 2800000, guid: c4241f6a1b9094a09b6ef9c81b56a80c, type: 3}
+    second: {fileID: 2800000, guid: f41f73ac4fdc248adbec921a2575f109, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

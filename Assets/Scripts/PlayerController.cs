@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 0.5f;
 
-    PlayerAction curAction;
-    PlayerAction lastAction;
+    PlayerAction curAction = PlayerAction.IDLE;
+    PlayerAction lastAction = PlayerAction.IDLE;
 
     Vector3 curTarget = Vector3.zero;
 
@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 		animator = GetComponent<Animator>();
-
 	}
 
     bool hasTargetPlace = false;
@@ -27,8 +26,38 @@ public class PlayerController : MonoBehaviour
 
         if (canController)
         {
-            Vector2 touchPoint = Input.mousePosition;
-            bool bTouch = false;
+            SetupTargetPlace();
+        }
+
+        UpdatePosition();
+        UpdateAnimator();
+    }
+
+    private void UpdatePosition()
+    {
+        lastAction = curAction;
+        if (hasTargetPlace)
+        {
+            if (DistanceFromTarget() > 0.1f)
+            {
+                UpdateDirection();
+                Vector3 v = Vector3.MoveTowards(transform.position, curTarget, speed * Time.deltaTime);
+                transform.position = v;
+                curAction = PlayerAction.RUN;
+            }
+            else
+            {
+                hasTargetPlace = false;
+                transform.position = curTarget;
+                curAction = PlayerAction.IDLE;
+            }
+        }
+    }
+
+    private void SetupTargetPlace()
+    {
+        Vector2 touchPoint = Input.mousePosition;
+        bool bTouch = false;
 
 #if (UNITY_ANDROID || UNITY_IPHONE) && !UNITY_EDITOR
             if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -42,46 +71,26 @@ public class PlayerController : MonoBehaviour
                 
             }
 #else
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                if (!EventSystem.current.IsPointerOverGameObject())
-                {
-                    bTouch = true;
-                    touchPoint = Input.mousePosition;
-                }
-            }
-#endif
-
-            if (bTouch)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(touchPoint);
-                RaycastHit hitInfo;
-                if (Physics.Raycast(ray, out hitInfo, 100, LayerMask.GetMask("Ground")))
-                {
-                    GameObject gameObj = hitInfo.collider.gameObject;
-                    Vector3 hitPoint = hitInfo.point;
-                    curTarget = hitPoint;
-                    hasTargetPlace = true;
-                    animator.SetTrigger("run");
-                }
+                bTouch = true;
+                touchPoint = Input.mousePosition;
             }
         }
+#endif
 
-        if (hasTargetPlace)
+        if (bTouch)
         {
-            if(DistanceFromTarget() > 0.1f)
+            Ray ray = Camera.main.ScreenPointToRay(touchPoint);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo, 100, LayerMask.GetMask("Ground")))
             {
-                UpdateDirection();
-                Vector3 v = Vector3.MoveTowards(transform.position, curTarget, speed * Time.deltaTime);
-                transform.position = v;
-                curAction = PlayerAction.RUN;
-            } else
-            {
-                hasTargetPlace = false;
-                curAction = PlayerAction.IDLE;
-                transform.position = curTarget;
-                animator.ResetTrigger("run"); // 不加会有bug
-                animator.SetTrigger("idle");
+                GameObject gameObj = hitInfo.collider.gameObject;
+                Vector3 hitPoint = hitInfo.point;
+                curTarget = hitPoint;
+                hasTargetPlace = true;
             }
         }
     }
@@ -102,6 +111,16 @@ public class PlayerController : MonoBehaviour
         canController = can;
     }
 
+    public void Reset()
+    {
+        transform.position = Vector3.zero;
+        animator.SetTrigger("idle");
+        hasTargetPlace = false;
+        canController = false;
+        curAction = PlayerAction.IDLE;
+        lastAction = PlayerAction.IDLE;
+    }
+
     public Frame getFrame()
     {
         Frame frame = new Frame();
@@ -118,15 +137,22 @@ public class PlayerController : MonoBehaviour
         lastAction = curAction;
         curAction = frame.action;
 
-        if(lastAction != curAction)
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        if (lastAction != curAction)
         {
             switch (curAction)
             {
                 case PlayerAction.IDLE:
                     animator.SetTrigger("idle");
+                    print("idle");
                     break;
                 case PlayerAction.RUN:
                     animator.SetTrigger("run");
+                    print("run");
                     break;
             }
         }

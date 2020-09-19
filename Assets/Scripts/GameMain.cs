@@ -6,7 +6,7 @@ public class GameMain : MonoBehaviour
 {
 
     public PlayerController player;
-    private DataCenter dataCenter;
+    private Timeline dataCenter;
     private int frameId = 0;
     private int endFrameId = 0;
 
@@ -16,16 +16,14 @@ public class GameMain : MonoBehaviour
     {
         Application.targetFrameRate = 60;
 
-        dataCenter = DataCenter.getInstance();
+        dataCenter = Timeline.getInstance();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(cmd == GameCmd.PLAY)
@@ -68,9 +66,10 @@ public class GameMain : MonoBehaviour
 
     public void GameReset()
     {
+        player.setCanController(false);
         frameId = 0;
         endFrameId = 0;
-        player.setCanController(true);
+        player.Reset();
         dataCenter.clear();
     }
 }
