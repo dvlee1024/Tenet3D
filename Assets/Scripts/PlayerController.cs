@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    public Transform targetObj;
     public float speed = 0.5f;
 
     PlayerAction curAction = PlayerAction.IDLE;
@@ -14,6 +16,8 @@ public class PlayerController : MonoBehaviour
     Vector3 curTarget = Vector3.zero;
 
     private bool canController = false;
+
+   
 
     void Start()
     {
@@ -91,8 +95,20 @@ public class PlayerController : MonoBehaviour
                 Vector3 hitPoint = hitInfo.point;
                 curTarget = hitPoint;
                 hasTargetPlace = true;
+
+                targetObj.position = curTarget + Vector3.up * 0.01f;
+
+                StopCoroutine(TargetDisappear());
+                StartCoroutine(TargetDisappear());
             }
         }
+    }
+
+    IEnumerator TargetDisappear()
+    {
+        yield return new WaitForSeconds(0.3f);
+
+        targetObj.position = Vector3.down * 5;
     }
 
     private float DistanceFromTarget()
