@@ -6,12 +6,12 @@ public class Frame
 {
     public Vector3 postion;
     public Quaternion rotation;
-    public ActorAction action;
+    public PlayerAction action;
 
     public Frame nextFrame;
 }
 
-public enum ActorAction
+public enum PlayerAction
 {
     IDLE,
     WALK,

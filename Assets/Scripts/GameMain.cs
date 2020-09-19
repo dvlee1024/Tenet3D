@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameMain : MonoBehaviour
 {
 
-    public PeopleCtrl persion;
+    public PlayerController player;
     private DataCenter dataCenter;
     private int frameId = 0;
     private int endFrameId = 0;
@@ -31,7 +31,7 @@ public class GameMain : MonoBehaviour
         if(cmd == GameCmd.PLAY)
         {
             ArrayList list = dataCenter.getDataByFrameId(frameId);
-            list.Add(persion.getFrame());
+            list.Add(player.getFrame());
 
             endFrameId = frameId;
             frameId++;
@@ -40,7 +40,7 @@ public class GameMain : MonoBehaviour
             ArrayList list = dataCenter.getDataByFrameId(frameId);
             if(list.Count > 0)
             {
-                persion.setFrame((Frame)list[0]);
+                player.setFrame((Frame)list[0]);
             }
 
             if(frameId < endFrameId)
@@ -55,13 +55,13 @@ public class GameMain : MonoBehaviour
 
     public void GameStart()
     {
-        persion.setCanController(true);
+        player.setCanController(true);
         cmd = GameCmd.PLAY;
     }
 
     public void GameReplay()
     {
-        persion.setCanController(false);
+        player.setCanController(false);
         frameId = 0;
         cmd = GameCmd.REPLAY;
     }
@@ -70,7 +70,7 @@ public class GameMain : MonoBehaviour
     {
         frameId = 0;
         endFrameId = 0;
-        persion.setCanController(true);
+        player.setCanController(true);
         dataCenter.clear();
     }
 }
