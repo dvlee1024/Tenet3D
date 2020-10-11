@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
 
     public Transform targetObj;
-    public float speed = 0.5f;
+    public float speed = 0.2f;
 
     PlayerAction curAction = PlayerAction.IDLE;
     PlayerAction lastAction = PlayerAction.IDLE;
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-		animator = GetComponent<Animator>();
-	}
+		animator = GetComponentInChildren<Animator>();
+    }
 
     bool hasTargetPlace = false;
     void Update()
@@ -137,6 +137,14 @@ public class PlayerController : MonoBehaviour
         lastAction = PlayerAction.IDLE;
     }
 
+    public void ClearTargetPlace()
+    {
+        hasTargetPlace = false;
+        curAction = PlayerAction.IDLE;
+
+        UpdateAnimator();
+    }
+
     public Frame getFrame()
     {
         Frame frame = new Frame();
@@ -164,14 +172,19 @@ public class PlayerController : MonoBehaviour
             {
                 case PlayerAction.IDLE:
                     animator.SetTrigger("idle");
-                    print("idle");
+                    //print("idle");
                     break;
                 case PlayerAction.RUN:
                     animator.SetTrigger("run");
-                    print("run");
+                    //print("run");
                     break;
             }
         }
+    }
+
+    public void Reverse()
+    {
+        //animator.speed = -animator.speed;
     }
 
 }

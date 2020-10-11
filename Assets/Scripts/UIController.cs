@@ -6,6 +6,8 @@ public class UIController : MonoBehaviour
 {
 
     GameMain gameMain;
+
+    public GameObject StartPage;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class UIController : MonoBehaviour
 
     public void OnClickStart()
     {
+        StartPage.SetActive(false);
         gameMain.GameStart();
     }
 
