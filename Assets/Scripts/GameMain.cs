@@ -11,8 +11,6 @@ public class GameMain : MonoBehaviour
     public Transform doorExist;
     private Timeline timeline;
 
-    private GameCmd cmd = GameCmd.NONE;
-
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -28,9 +26,9 @@ public class GameMain : MonoBehaviour
     void Update()
     {
         
-        switch (cmd)
+        switch (GameDataCenter.curState)
         {
-            case GameCmd.PLAY:
+            case GameState.PLAY:
                 {
                     int frameId = timeline.NextFrame();
                     ArrayList list = timeline.getCurFrameData();
@@ -39,14 +37,14 @@ public class GameMain : MonoBehaviour
                     CheckPlayerEnterDoor();
                 }
                 break;
-            case GameCmd.REPLAY:
+            case GameState.REPLAY:
                 {
                     int frameId = timeline.NextFrame();
                     print(frameId);
                     ArrayList list = timeline.getCurFrameData();
                     if (list == null)
                     {
-                        cmd = GameCmd.NONE;
+                        GameDataCenter.curState = GameState.NONE;
                         break;
                     }
                     if (list.Count > 0)
@@ -59,14 +57,14 @@ public class GameMain : MonoBehaviour
                     }
                 }
                 break;
-            case GameCmd.MAGIC_PLAY:
+            case GameState.MAGIC_PLAY:
                 {
                     int frameId = timeline.NextFrame();
                     print(frameId);
                     ArrayList list = timeline.getCurFrameData();
                     if(list == null)
                     {
-                        cmd = GameCmd.NONE;
+                        GameDataCenter.curState = GameState.NONE;
                         break;
                     }
                     if (list.Count > 0)
@@ -104,20 +102,20 @@ public class GameMain : MonoBehaviour
         player.transform.rotation = Quaternion.Euler(0, 180, 0);
         
         clonePlayer.gameObject.SetActive(true);
-        cmd = GameCmd.MAGIC_PLAY;
+        GameDataCenter.curState = GameState.MAGIC_PLAY;
     }
 
     public void GameStart()
     {
         player.setCanController(true);
-        cmd = GameCmd.PLAY;
+        GameDataCenter.curState = GameState.PLAY;
     }
 
     public void GameReplay()
     {
         player.setCanController(false);
         timeline.Replay();
-        cmd = GameCmd.REPLAY;
+        GameDataCenter.curState = GameState.REPLAY;
     }
 
     public void GameReset()
@@ -132,12 +130,4 @@ public class GameMain : MonoBehaviour
 }
 
 
-public enum GameCmd
-{
-    NONE,
-    PLAY,
-    MAGIC_PLAY,
-    STOP,
-    REPLAY,
-    RESET
-}
+

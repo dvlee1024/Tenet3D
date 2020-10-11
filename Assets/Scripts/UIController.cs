@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
     GameMain gameMain;
 
     public GameObject StartPage;
+    public TimebarCtrl timebarCtrl;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class UIController : MonoBehaviour
     public void OnClickReplay()
     {
         gameMain.GameReplay();
+        timebarCtrl.Replay();
     }
 
     public void OnClickReset()
